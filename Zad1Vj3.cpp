@@ -14,12 +14,12 @@ inline bool descending(int a, int b) {
 void sortt(int niz[], std::size_t vel, bool(*cmp)(int, int)) {
 	if (vel <= 1) return;
 	for (std::size_t i = 0; i < vel - 1; i++) {
-		for (std::size_t j = 0; j < vel - i - i; j++) {
-			if (j + 1 < vel) {
-				if (!cmp(niz[j], niz[j + 1])) {
-					int temp = niz[j];
-					niz[j] = niz[j + 1];
-					niz[j + 1] = temp;
+        for (std::size_t j = 0; j < vel - i - 1; j++) {
+            if (j + 1 < vel) {
+                if (!cmp(niz[j], niz[j + 1])) {
+                    int temp = niz[j];
+                    niz[j] = niz[j + 1];
+                    niz[j + 1] = temp;
 				}
 			}
 		}
@@ -43,11 +43,4 @@ int main(){
 	for (int z = 0; z < vel; z++) {
 		std::cout << niz[z] << " ";
 	}
-
-
-
-
-
-
-
 }
